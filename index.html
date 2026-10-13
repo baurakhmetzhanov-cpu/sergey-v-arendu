@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Сергей в аренду</title>
+  <meta name="description" content="ТОО «Нурым Найман Трейд» сдаёт в аренду Сергея Кагановича — специалиста по зарабатыванию денег арендатору.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&family=Unbounded:wght@500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='28' fill='none' stroke='%232D3E9E' stroke-width='6'/%3E%3Ctext x='32' y='42' text-anchor='middle' font-size='28' font-family='Arial' font-weight='700' fill='%232D3E9E'%3E%E2%82%B8%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+  <a class="skip" href="#main">Перейти к содержанию</a>
+
+  <header class="top">
+    <div class="wrap top__row">
+      <a class="brand" href="#main" aria-label="На главную">
+        <span class="brand__seal" aria-hidden="true">ННТ</span>
+        <span class="brand__text">
+          <span class="brand__name">ТОО «Нурым Найман Трейд»</span>
+          <span class="brand__tag">patient zero</span>
+        </span>
+      </a>
+      <button class="top__toggle" aria-expanded="false" aria-controls="nav">Меню</button>
+      <nav id="nav" class="nav" aria-label="Разделы">
+        <a href="#services">Услуги</a>
+        <a href="#calc">Расчёт</a>
+        <a href="#terms">Условия</a>
+        <a href="#reviews">Отзывы</a>
+        <a class="nav__cta" href="#order">Арендовать</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO: объект аренды -->
+    <section class="hero">
+      <div class="wrap hero__grid">
+        <div class="hero__head">
+          <p class="hero__lead">Сдаётся в аренду, почасово и посуточно</p>
+          <h1 class="hero__title" aria-label="Сергей Каганович">Сергей<br>Каганович</h1>
+        </div>
+        <div class="hero__text">
+          <p class="hero__sub">
+            Один человек, который делает так, что денег у вас становится больше.
+            Торгуется, считает, находит, договаривается. Сдаётся с полной
+            комплектацией: калькулятор в голове, связи на Зелёном базаре и
+            вежливый взгляд, после которого возвращают долги.
+          </p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#order">Оформить аренду</a>
+            <a class="btn btn--ghost" href="#calc">Посчитать выгоду</a>
+          </div>
+        </div>
+
+        <aside class="passport" aria-label="Паспорт объекта аренды">
+          <div class="passport__head">
+            <span>Паспорт объекта аренды</span>
+            <span>№ СК-001</span>
+          </div>
+          <figure class="passport__photo">
+            <img src="assets/sergey.jpg" alt="Сергей Каганович" width="480" height="560"
+                 onerror="this.hidden=true;this.nextElementSibling.hidden=false">
+            <div class="passport__mono" hidden aria-hidden="true">СК</div>
+            <div class="stamp" aria-hidden="true">
+              <svg viewBox="0 0 200 200">
+                <defs>
+                  <filter id="halo" x="-10%" y="-10%" width="120%" height="120%">
+                    <feMorphology in="SourceAlpha" operator="dilate" radius="2.5" result="fat"/>
+                    <feFlood flood-color="#fff"/>
+                    <feComposite in2="fat" operator="in" result="outline"/>
+                    <feMerge><feMergeNode in="outline"/><feMergeNode in="SourceGraphic"/></feMerge>
+                  </filter>
+                  <path id="ring" d="M100,100 m-74,0 a74,74 0 1,1 148,0 a74,74 0 1,1 -148,0"/>
+                </defs>
+                <g filter="url(#halo)">
+                <circle cx="100" cy="100" r="94" fill="none" stroke="currentColor" stroke-width="5"/>
+                <circle cx="100" cy="100" r="60" fill="none" stroke="currentColor" stroke-width="2.5"/>
+                <text font-size="15" font-weight="700" letter-spacing="2.2" fill="currentColor">
+                  <textPath href="#ring">ТОО «НУРЫМ НАЙМАН ТРЕЙД» · АЛМАТЫ · ДЛЯ ДОГОВОРОВ ·</textPath>
+                </text>
+                <text x="100" y="95" text-anchor="middle" font-size="20" font-weight="900" fill="currentColor">СДАЁТСЯ</text>
+                <text x="100" y="122" text-anchor="middle" font-size="14" font-weight="700" fill="currentColor">в аренду</text>
+                </g>
+              </svg>
+            </div>
+          </figure>
+          <dl class="passport__specs">
+            <div><dt>Объект</dt><dd>Сергей Каганович</dd></div>
+            <div><dt>Назначение</dt><dd>Приумножение денег арендатора</dd></div>
+            <div><dt>Состояние</dt><dd>Отличное, после плова — превосходное</dd></div>
+            <div><dt>Собственник</dt><dd>ТОО «Нурым Найман Трейд»</dd></div>
+            <div><dt>Статус</dt><dd><span class="status" id="status">Свободен сегодня</span></dd></div>
+          </dl>
+        </aside>
+      </div>
+    </section>
+
+    <!-- БИРЖЕВАЯ СТРОКА -->
+    <div class="ticker" aria-label="Котировки Сергея">
+      <div class="ticker__track">
+        <ul class="ticker__list">
+          <li>СК <b class="up">▲ 12,4 %</b></li>
+          <li>Скидки на базаре <b class="up">▲ 30 %</b></li>
+          <li>Должники <b class="down">▼ 3 чел.</b></li>
+          <li>Тои в плюсе <b class="up">▲ 100 %</b></li>
+          <li>Настроение после плова <b class="up">▲ максимум</b></li>
+          <li>Лишние подписки <b class="down">▼ 48 000 ₸</b></li>
+          <li>Курс салфеточных бизнес-планов <b class="up">▲ 6×</b></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- УСЛУГИ -->
+    <section class="section" id="services" aria-labelledby="services-h">
+      <div class="wrap">
+        <div class="section__head">
+          <h2 id="services-h">Что входит в аренду</h2>
+          <p>Сергей работает по прейскуранту. Каждая услуга оплачивается отдельно
+             и, по расчётам собственника, окупается до конца рабочего дня.</p>
+        </div>
+        <ul class="price" id="price-list"></ul>
+      </div>
+    </section>
+
+    <!-- КАЛЬКУЛЯТОР -->
+    <section class="section section--ink" id="calc" aria-labelledby="calc-h">
+      <div class="wrap calc">
+        <div class="calc__form">
+          <h2 id="calc-h">Сколько вы заработаете</h2>
+          <p class="calc__note">Отметьте услуги и срок аренды. Расчёт приблизительный,
+            но Сергей обычно перевыполняет.</p>
+
+          <fieldset class="calc__services">
+            <legend>Услуги</legend>
+            <div id="calc-options" class="checks"></div>
+          </fieldset>
+
+          <div class="calc__range">
+            <label for="hours">Срок аренды: <output id="hours-out" for="hours">8 часов</output></label>
+            <input type="range" id="hours" min="1" max="72" value="8" step="1">
+            <div class="calc__ticks" aria-hidden="true"><span>1 час</span><span>3 дня</span></div>
+          </div>
+        </div>
+
+        <div class="receipt" aria-live="polite">
+          <div class="receipt__title">Предварительный счёт</div>
+          <dl class="receipt__rows">
+            <div><dt>Стоимость аренды</dt><dd id="cost">0 ₸</dd></div>
+            <div><dt>Ожидаемая прибыль</dt><dd id="profit">0 ₸</dd></div>
+          </dl>
+          <div class="receipt__total">
+            <span>Чистыми в кармане</span>
+            <strong id="net">0 ₸</strong>
+          </div>
+          <p class="receipt__verdict" id="verdict">Отметьте хотя бы одну услугу.</p>
+          <a class="btn btn--sun" href="#order" id="calc-to-order">Перенести в заявку</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- УСЛОВИЯ -->
+    <section class="section" id="terms" aria-labelledby="terms-h">
+      <div class="wrap terms">
+        <div class="section__head">
+          <h2 id="terms-h">Условия договора аренды</h2>
+          <p>Выдержка из типового договора. Полный текст подписывается
+             на капоте машины арендодателя.</p>
+        </div>
+        <ol class="clauses">
+          <li><span class="clauses__n">1.1</span>Объект передаётся арендатору в бодром виде, накормленным и с заряженным телефоном.</li>
+          <li><span class="clauses__n">1.2</span>Арендатор обязуется кормить объект не реже одного раза в три часа. Бешбармак засчитывается за два приёма пищи.</li>
+          <li><span class="clauses__n">2.1</span>Вся прибыль сверх расчёта остаётся у арендатора. Арендодатель на чужое не претендует, только завидует.</li>
+          <li><span class="clauses__n">2.2</span>Если Сергей выторговал скидку на собственную аренду, скидка действует. Таковы правила рынка.</li>
+          <li><span class="clauses__n">3.1</span>Запрещается использовать объект для переезда, копки картошки и ожидания в очередях ЦОНа.</li>
+          <li><span class="clauses__n">3.2</span>Объект не работает после 23:00 и во время матчей «Кайрата».</li>
+          <li><span class="clauses__n">4.1</span>Возврат объекта — в месте получения, в том же настроении или лучше.</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ОТЗЫВЫ -->
+    <section class="section section--tint" id="reviews" aria-labelledby="reviews-h">
+      <div class="wrap">
+        <div class="section__head">
+          <h2 id="reviews-h">Что говорят арендаторы</h2>
+        </div>
+        <div class="reviews">
+          <figure class="review review--big">
+            <blockquote>Взял Сергея на два часа на авторынок. Приехали за машиной,
+              уехали на машине и с продавцом, который теперь хочет у меня работать.</blockquote>
+            <figcaption>Ерлан, арендовал на 2 часа</figcaption>
+          </figure>
+          <figure class="review">
+            <blockquote>Попросила просто посмотреть мой семейный бюджет. Нашлось
+              48 000 ₸ в подписках, о которых я не знала.</blockquote>
+            <figcaption>Айгерим, тариф «Сутки»</figcaption>
+          </figure>
+          <figure class="review">
+            <blockquote>Той на 300 человек вышел в плюс. Не спрашивайте как.</blockquote>
+            <figcaption>Семья Сейткали, тариф «Той-сезон»</figcaption>
+          </figure>
+          <figure class="review">
+            <blockquote>Один раз посмотрел на моего должника. Деньги вернули в тот же вечер,
+              с извинениями и тортом.</blockquote>
+            <figcaption>Данияр, разовая услуга</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ЗАЯВКА -->
+    <section class="section" id="order" aria-labelledby="order-h">
+      <div class="wrap order">
+        <div class="order__intro">
+          <h2 id="order-h">Заявка на аренду</h2>
+          <p>Заполните поля — договор сформируется прямо здесь. Покажите его
+             арендодателю, и Сергей выедет к вам после согласования времени
+             и меню.</p>
+        </div>
+
+        <form class="form" id="order-form" novalidate>
+          <div class="field">
+            <label for="f-name">Ваше имя</label>
+            <input id="f-name" name="name" type="text" autocomplete="name" required placeholder="Например, Ерлан">
+            <p class="field__error" id="f-name-err" hidden>Впишите имя, иначе договор не на кого оформить.</p>
+          </div>
+          <div class="field">
+            <label for="f-goal">Сколько хотите заработать</label>
+            <input id="f-goal" name="goal" type="text" inputmode="numeric" placeholder="1 000 000" required>
+            <p class="field__error" id="f-goal-err" hidden>Укажите сумму цифрами, например 500 000.</p>
+          </div>
+          <div class="field">
+            <label for="f-tariff">Тариф</label>
+            <select id="f-tariff" name="tariff">
+              <option value="hour">Час — 15 000 ₸</option>
+              <option value="day" selected>Сутки — 90 000 ₸</option>
+              <option value="toy">Той-сезон — договорная</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="f-date">Когда нужен Сергей</label>
+            <input id="f-date" name="date" type="date" required>
+            <p class="field__error" id="f-date-err" hidden>Выберите дату не раньше сегодняшней.</p>
+          </div>
+          <div class="field field--wide">
+            <label for="f-task">Задача</label>
+            <textarea id="f-task" name="task" rows="3" placeholder="Например: продать старый «Камри» дороже, чем купил"></textarea>
+          </div>
+          <label class="check check--consent">
+            <input type="checkbox" id="f-food" name="food" checked>
+            <span>Обязуюсь кормить объект аренды по п. 1.2</span>
+          </label>
+          <button class="btn btn--primary btn--wide" type="submit">Сформировать договор</button>
+        </form>
+
+        <article class="contract" id="contract" hidden tabindex="-1" aria-labelledby="contract-h">
+          <header class="contract__head">
+            <h3 id="contract-h">Договор аренды № <span data-c="num"></span></h3>
+            <p>г. Алматы, <span data-c="today"></span></p>
+          </header>
+          <p>ТОО «Нурым Найман Трейд» (Арендодатель) передаёт, а <b data-c="name"></b> (Арендатор)
+             принимает во временное пользование Сергея Кагановича (Объект) на дату
+             <b data-c="date"></b> по тарифу «<span data-c="tariff"></span>».</p>
+          <p>Цель аренды: заработать <b data-c="goal"></b>. Задача: <span data-c="task"></span></p>
+          <p data-c="food"></p>
+          <div class="contract__sign">
+            <div><span>Арендодатель</span><span class="contract__line"></span></div>
+            <div><span>Арендатор</span><span class="contract__line" data-c="sign"></span></div>
+          </div>
+          <div class="stamp stamp--small" aria-hidden="true"></div>
+          <div class="contract__actions">
+            <button class="btn btn--primary" type="button" id="print">Распечатать</button>
+            <button class="btn btn--ghost" type="button" id="copy">Скопировать текст</button>
+            <span class="contract__msg" id="copy-msg" role="status"></span>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap foot__row">
+      <div>
+        <strong>ТОО «Нурым Найман Трейд»</strong>
+        <span class="foot__tag">patient zero</span>
+        <p>Арендодатель и единственный собственник объекта. Алматы.</p>
+      </div>
+      <p class="foot__small">Сайт шуточный. Сергей настоящий, а его таланты — тем более.
+        © <span id="year"></span></p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
